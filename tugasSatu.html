@@ -1,0 +1,101 @@
+<html>
+<script>
+
+// var apple=0
+// var grape=0
+// var pinapple=0
+// var durian=0
+
+var stockApple=5
+var stockGrape=7
+var stockPinapple=8
+var stockDurian=10
+
+do{
+    do{
+        var pilihBuah=prompt("Mau belanja apa? \n1. Anggur Rp.5000\n2. Apel Rp.10000\n3. Nanas Rp.2000 \n4. Durian Rp.30000")
+        if(pilihBuah!=1&&pilihBuah!=2&&pilihBuah!=3&&pilihBuah!=4){
+            alert("Pilih yang bener dong")
+        }if(pilihBuah===0){
+        alert("anda tidak beli buah ya")
+        }
+    }while(pilihBuah>4)
+
+    if(pilihBuah==1){
+    do{
+        var grape=prompt("Masukkan jumlah Anggur: \nStock yang tersedia: "+stockGrape)
+        if(grape>stockGrape){
+            alert("stok anggur kurang cuy")
+        }if(grape==0){
+        alert("anda tidak beli anggur ya")
+        }
+    }while(grape>stockGrape)
+    }
+
+    if(pilihBuah==2){
+    do{
+        var apple=prompt("Masukkan jumlah Apple: \nStock yang tersedia: "+stockApple)
+        if(apple>stockApple){
+            alert("stok apel kurang cuy")
+        }if(apple==0){
+        alert("anda tidak beli apel ya")
+        }
+    }while(apple>stockApple)
+    }
+
+    if(pilihBuah==3){
+    do{
+        var pinapple=prompt("Masukkan jumlah Nanas: \nStock yang tersedia: "+stockPinapple)
+        if(pinapple>stockPinapple){
+        alert("stok nanas kurang cuy")
+            }if(pinapple==0){
+            alert("anda tidak beli nanas ya")
+        }
+    }while(pinapple>stockPinapple)
+    } 
+
+    if(pilihBuah==4){
+    do{
+        var durian=prompt("Masukkan jumlah Durian: \nStock yang tersedia: "+stockDurian)
+        if(durian>stockDurian){
+        alert("stok durian kurang cuy")
+            }if(durian==0){
+            alert("anda tidak beli durian ya")
+        }
+    }while(durian>stockDurian)
+    }
+    
+    var hargaGrape=grape*5000
+    var hargaApple=apple*10000
+    var hargaPinapple=pinapple*2000
+    var hargaDurian=durian*30000
+    var totalHarga=parseInt(hargaApple+hargaGrape+hargaPinapple+hargaDurian)
+
+    alert("Detail Belanja\n\nGrape: "+grape+" x 5000 = "+hargaGrape+"\nApple: "
+    +apple+" x 10000 = "+hargaApple+"\nPinapple: "
+    +pinapple+" x 2000 = "+hargaPinapple+"\nDurian: "
+    +durian+" x 30000 = "+hargaDurian+"\n\nTotal: "+totalHarga)
+
+
+
+var balik=confirm("Mau belanja lagi bro?\nKalo gak, langsung bayar di kasir ya..")
+
+}while(balik==true)
+
+do{
+var jumlahUang=prompt("Masukkan uang anda: \nHarga yang harus dibayar: "+totalHarga)
+var kembalian=jumlahUang-totalHarga
+
+    if(jumlahUang<totalHarga){
+        alert("Uang anda kurang "+(totalHarga-jumlahUang))
+    }else{
+        alert("kembalian anda adalah: "+kembalian)
+    }  
+
+}while(jumlahUang<totalHarga)
+
+    alert("Makasi sudah berbelanja di Alabasta Shop ya")
+
+
+</script>
+</html>

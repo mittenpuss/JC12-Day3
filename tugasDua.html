@@ -1,0 +1,70 @@
+
+<html>
+<script>
+
+var kendaraan=prompt("1.Motor\n2.Mobil")
+
+while(kendaraan!=1&&kendaraan!=2){
+    alert("input anda salah")
+    var kendaraan=prompt("1.Motor\n2.Mobil")
+}
+
+var salahinput=true
+while(salahinput){
+    var masuk=parseInt(prompt("masukkan jam masuk(0-11)"))
+    if(masuk>=0&&masuk<12){
+        salahinput=false
+    }else{
+        alert("salah input masuk")
+    }
+}
+
+switch(true){
+case (kendaraan==1):
+    kendaraan="motor"
+    break;
+case (kendaraan==2):
+    kendaraan="mobil"
+    break;
+default:
+    alert("lah anda naik apaan?")
+}
+
+var parkirMasukJam=parseInt(prompt("Anda masuk jam berapa: "))
+var parkirMasukTZ= prompt("1.AM\n2.PM")
+var parkirKeluarJam=parseInt(prompt("Anda keluar jam berapa: "))
+var parkirKeluarTZ= prompt("1.AM\n2.PM")
+
+if(parkirMasukTZ==1 && parkirKeluarTZ==1){
+    var totalJamParkir = parseInt(parkirKeluarJam-parkirMasukJam)
+    alert("Anda parkir "+totalJamParkir+" jam")
+}else if(parkirMasukTZ==1 && parkirKeluarTZ==2){
+    var totalJamParkir = parseInt((parkirKeluarJam+12)-parkirMasukJam)
+    alert("Anda parkir "+totalJamParkir+" jam")
+}else if(parkirMasukTZ==2 && parkirKeluarTZ==2){
+    var totalJamParkir = parseInt(parkirKeluarJam-parkirMasukJam)
+    alert("Anda parkir "+totalJamParkir+" jam")
+}else if(parkirMasukTZ==2 && parkirKeluarTZ==1){
+    var totalJamParkir = parseInt((parkirKeluarJam+12)-parkirMasukJam)
+    alert("Anda parkir "+totalJamParkir+" jam")
+}else{
+    (parkirMasukTZ<=0&&parkirMasukTZ>=3||parkirKeluarTZ<=0&&parkirKeluarTZ>=0)
+    alert("ngaco anda ya")
+}
+
+var hargaParkir=0
+var totalHargaParkir=0
+
+if(totalJamParkir>2){
+    hargaParkir+=3000
+    totalJamParkir-=2
+    totalJamParkir*=1000
+    totalHargaParkir=hargaParkir+totalJamParkir
+    alert("Anda naik: "+kendaraan+" dan total harga parkir anda: "+totalHargaParkir)
+}else if(totalHargaParkir<=2){
+    hargaParkir+=3000
+    alert("Anda naik: "+kendaraan+" dan total harga parkir anda: "+hargaParkir)
+}
+
+</script>
+</html>
